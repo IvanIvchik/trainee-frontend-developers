@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKETA</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function checkWrongName(name) {
+            if (name === null || name.length > 15 || name.length < 2) {
+                return true
+            } else {
+                return false;
+            }
+        }
+        function showMessage() {
+            alert("Некоректные данные");
+        }
+
+        let name;
+        while (true) {
+            name = prompt("Введите имя", "");
+
+            if (checkWrongName(name) == true) {
+                showMessage();
+            } else break;
+        }
+
+        let surname;
+        while (true) {
+            surname = prompt("Введите фамилию", "");
+
+            if (checkWrongName(surname) == true) {
+                showMessage();
+            } else break;
+        }
+
+        let patronymic;
+        while (true) {
+            patronymic = prompt("Введите отчество", "");
+
+            if (checkWrongName(patronymic) == true) {
+                showMessage();
+            } else break;
+        }
+
+        let age;
+        while (true) {
+            age = +prompt("Ваш возраст", "");
+            if (isNaN(age) || age < 5 || age > 100) {
+                showMessage();
+            } else break;
+        }
+
+        let gender = confirm("Вы мужчина?");
+        if (gender == true) {
+            gender = "Мужской";
+        } else {
+            gender = "Женский";
+        }
+
+        let status_pension;
+        if (gender == "Мужской" && age > 61 || gender == "Женский" && age > 56) {
+            status_pension = "Да";
+        } else {
+            status_pension = "Нет"
+        };
+
+        alert(`
+        ВАШЕ ФИО: ${surname} ${name} ${patronymic}
+        ВАШ ВОЗРАСТ В ГОДАХ: ${age}
+        ВАШ ВОЗРАСТ В ДНЯХ: ${age * 365}
+        ЧЕРЕЗ 5 ЛЕТ ВАМ БУДЕТ: ${age + 5}
+        ПОЛ: ${gender}
+        ВЫ НА ПЕНСИИ: ${status_pension}`
+        );
+
+
+    </script>
+</body>
+
+</html>

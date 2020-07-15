@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKETA</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let name;
+        while (true) {
+            name = prompt("Введите имя", "");
+            if (name === null || name.length > 15 || name.length < 2) {
+                alert("Некоректные данные")
+            } else break;
+        }
+
+        let surname;
+        while (true) {
+            surname = prompt("Введите фамилию", "");
+            if (surname === null || surname.length > 15 || surname.length < 2) {
+                alert("Некоректные данные")
+            } else break;
+        }
+
+        let patronymic;
+        while (true) {
+            patronymic = prompt("Введите отчество", "");
+            if (patronymic === null || patronymic.length > 15 || patronymic.length < 2) {
+                alert("Некоректные данные")
+            } else break;
+        }
+
+        let age;
+        while (true) {
+            age = +prompt("Ваш возраст", "");
+            if (isNaN(age) || age < 5 || age > 100) {
+                alert("Некоректные данные");
+            } else break;
+        }
+
+        let gender = confirm("Вы мужчина?");
+        if (gender == true) {
+            gender = "Мужской";
+        } else {
+            gender = "Женский";
+        }
+
+        let status_pension;
+        if (gender == "Мужской" && age > 61 || gender == "Женский" && age > 56) {
+            status_pension = "Да";
+        } else {
+            status_pension = "Нет"
+        };
+
+        alert(`
+        ВАШЕ ФИО: ${surname} ${name} ${patronymic}
+        ВАШ ВОЗРАСТ В ГОДАХ: ${age}
+        ВАШ ВОЗРАСТ В ДНЯХ: ${age * 365}
+        ЧЕРЕЗ 5 ЛЕТ ВАМ БУДЕТ: ${age + 5}
+        ПОЛ: ${gender}
+        ВЫ НА ПЕНСИИ: ${status_pension}`
+        );
+
+
+    </script>
+</body>
+
+</html>
