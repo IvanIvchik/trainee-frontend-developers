@@ -12,12 +12,9 @@
         "use strict";
 
         function checkWrongName(name) {
-            if (name === null || name.length > 15 || name.length < 2) {
-                return true
-            } else {
-                return false;
-            }
+            return (name === null || name.length > 15 || name.length < 2)
         }
+
         function showMessage() {
             alert("Некоректные данные");
         }
@@ -26,7 +23,7 @@
         while (true) {
             name = prompt("Введите имя", "");
 
-            if (checkWrongName(name) == true) {
+            if (checkWrongName(name)) {
                 showMessage();
             } else break;
         }
@@ -35,7 +32,7 @@
         while (true) {
             surname = prompt("Введите фамилию", "");
 
-            if (checkWrongName(surname) == true) {
+            if (checkWrongName(surname)) {
                 showMessage();
             } else break;
         }
@@ -44,7 +41,7 @@
         while (true) {
             patronymic = prompt("Введите отчество", "");
 
-            if (checkWrongName(patronymic) == true) {
+            if (checkWrongName(patronymic)) {
                 showMessage();
             } else break;
         }
