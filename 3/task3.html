@@ -10,10 +10,10 @@
 <body>
     <script>
         "use strict";
-        let obj = { k: 1};
+        let obj = {};
 
         function isEmpty(obj) {
-            if (Object.keys(obj) == "") {
+            if (Object.keys(obj).length === 0) {
                 return true;
             } else {
                 return false;
